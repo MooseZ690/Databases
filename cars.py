@@ -14,10 +14,10 @@ def print_cars():
         results = cursor.fetchall()
         if results:
             print(f' \n Cars found with engine {engine}: \n')
-            time.sleep(0.3)
+            time.sleep(0.2)
             for car in results:
                 print(f'[{car[0]}] \n Top Speed: {car[1]} \n Engine: {car[2]} \n')
-                time.sleep(0.15)
+                time.sleep(0.1)
             print_cars()
         else:
             print(f"No cars found in the database {DATABASE} with engine {engine}")
