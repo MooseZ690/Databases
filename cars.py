@@ -6,7 +6,7 @@ from time import sleep
 DATABASE = 'cars1.db'
 
 def print_cars():
-    engine = input("Enter engine type: ").upper()
+    engine = input("Enter engine type: ")
     with sqlite3.connect(DATABASE) as db:
         cursor = db.cursor()
         sql = "SELECT car.car_name, car.top_speed, engine.engine_name from car \n INNER JOIN engine ON car.engine=engine.engine_id \n WHERE engine.engine_name = ? \n ORDER BY car.top_speed DESC"
@@ -20,7 +20,7 @@ def print_cars():
                 time.sleep(0.1)
             print_cars()
         else:
-            print(f"No cars found in the database {DATABASE} with engine {engine}")
+            print(f"No cars found in the database {DATABASE} with engine {engine.lower()}")
             print_cars()
 if __name__ == "__main__":
     print_cars()
