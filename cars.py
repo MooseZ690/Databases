@@ -13,7 +13,7 @@ def print_cars():
         cursor.execute(sql, (engine,))
         results = cursor.fetchall()
         if results:
-            print(f' \n Cars found with engine {engine}: \n')
+            print(f' \n Cars with engine {engine}: \n')
             time.sleep(0.2)
             for car in results:
                 print(f'[{car[0]}] \n Top Speed: {car[1]} \n Engine: {car[2]} \n')
